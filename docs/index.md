@@ -1,3 +1,3 @@
-* [Proposition A](20141105/proposition-a.md)
-* [Proposition B](20141105/proposition-b.md)
-* [Proposition C](20141105/proposition-c.md)
+* [Proposition A](20141105/Proposition-A.md)
+* [Proposition B](20141105/Proposition-B.md)
+* [Proposition C](20141105/Proposition-C.md)
