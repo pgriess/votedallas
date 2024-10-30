@@ -1,0 +1,8 @@
+.propHeaderImage {
+    float: left;
+}
+
+.propSummary {
+    font-style: italic;
+    display: flow-root;
+}

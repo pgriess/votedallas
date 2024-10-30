@@ -1,1 +1,8 @@
 site_name: Vote Dallas
+
+markdown_extensions:
+  - attr_list
+
+theme:
+  name: null
+  custom_dir: theme/
