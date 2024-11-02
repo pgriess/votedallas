@@ -26,5 +26,5 @@ mkdocs build
 Push the website
 
 ```console
-aws s3 sync site/ s3://www.votedallas.org/
+aws s3 sync --delete site/ s3://www.votedallas.org/
 ```
