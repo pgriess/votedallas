@@ -20,6 +20,13 @@
 </head>
 
 <body>
+    {# Only render the link back to the home page if that's not where we are right now #}
+    {% if not page.is_homepage %}
+    <a href="/">{{ config.site_name }}</a>
+    &gt;
+    {{ page.title }}
+    {% endif %}
+
     {{ page.content }}
 
     {%- for script in config.extra_javascript %}
