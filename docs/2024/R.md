@@ -1,0 +1,4 @@
+# Proposition R
+
+Shall the Dallas City Charter be amended by adding a new section in Chapter XXIV that reforms marijuana possession enforcement by prohibiting the Dallas Police Department from making arrests or issuing citations for marijuana possession or considering the odor of marijuana as probable cause for search or seizure, except as part of a violent felony or high priority narcotics felony investigation; making enforcement of Class A (currently, two to four ounces) and Class B (currently, up to two ounces) misdemeanor marijuana possession the Dallas Police Department's lowest enforcement priority; and prohibiting city funds or personnel from being used to test cannabis-related substances to determine whether a substance meets the legal definition of marijuana, except in limited circumstances?
+{: .propSummary }
