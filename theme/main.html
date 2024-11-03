@@ -20,6 +20,8 @@
 </head>
 
 <body>
+    <a href="/about" class="rightHeader">About</a>
+
     {# Only render the link back to the home page if that's not where we are right now #}
     {% if not page.is_homepage %}
     <a href="/">{{ config.site_name }}</a>

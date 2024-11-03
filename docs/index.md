@@ -1,4 +1,4 @@
-Propositions for November 5, 2024
+# November 5, 2024
 
 * [Proposition A](2024/A.md)
 * [Proposition B](2024/B.md)

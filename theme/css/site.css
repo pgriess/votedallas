@@ -17,3 +17,7 @@ th {
 .propSummary {
     font-style: italic;
 }
+
+.rightHeader {
+    float: right;
+}
