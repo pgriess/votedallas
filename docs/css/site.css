@@ -21,3 +21,13 @@ th {
 .rightHeader {
     float: right;
 }
+
+.diffAdded {
+    color: green;
+    text-decoration-line: underline;
+}
+
+.diffRemoved {
+    color: red;
+    text-decoration-line: line-through;
+}
