@@ -4,8 +4,12 @@ markdown_extensions:
   - attr_list
 
 theme:
-  name: null
-  custom_dir: theme/
+  name: material
 
-watch:
-  - theme
+extra_css:
+  - css/site.css
+
+extra:
+  analytics:
+    provider: google
+    property: G-LEGEFL2H8J
