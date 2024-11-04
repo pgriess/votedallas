@@ -13,3 +13,4 @@ extra:
   analytics:
     provider: google
     property: G-LEGEFL2H8J
+  generator: false
