@@ -8,7 +8,7 @@ A table summarizing the salaries of mayor and city council members Dallas compar
 City                   | Mayor salary        | Council salary
 -----------------------|---------------------|----------------------
 Dallas (Current)       | $80,000             | $60,000
-Dallas (Proposition C) | $110,000            | $90,000
+Dallas (Prop. C)       | $110,000            | $90,000
 Houston                | $255,738            | $72,603
 Phoenix                | $144,141            | $111,750
 
