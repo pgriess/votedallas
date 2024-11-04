@@ -1,5 +1,7 @@
 # Home
 
+Vote Dallas provides factual, non-partisan information about ballot propositions.
+
 ## November 5, 2024
 
 * [Proposition A](2024/A.md)
