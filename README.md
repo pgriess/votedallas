@@ -17,14 +17,14 @@ Install requirements
 pip install -r requirements.txt
 ```
 
-Build the website
+Run the website locally (will automatically refresh)
 
 ```console
-mkdocs build
+$ make build
 ```
 
-Push the website
+Deploy the website
 
 ```console
-aws s3 sync --delete site/ s3://www.votedallas.org/
+$ make deploy
 ```
