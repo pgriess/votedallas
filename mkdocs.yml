@@ -2,6 +2,11 @@ site_name: Vote Dallas
 
 markdown_extensions:
   - attr_list
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
 
 theme:
   name: material
@@ -10,7 +15,7 @@ extra_css:
   - css/site.css
 
 extra:
-  analytics:
-    provider: google
-    property: G-LEGEFL2H8J
+  # analytics:
+    # provider: google
+    # property: G-LEGEFL2H8J
   generator: false
