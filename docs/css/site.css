@@ -2,22 +2,6 @@ body {
     font-size: 2rem;
 }
 
-/*
- * I'm not sure how to set attributes on Markdown tables using the attr_list
- * extension so just apply this everywhere. We can do better later, probably.
- */
-table {
-    width: 100%;
-}
-
-th {
-    text-align: left;
-}
-
 .propSummary {
     font-style: italic;
-}
-
-.rightHeader {
-    float: right;
 }
