@@ -1,0 +1,34 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition D{% endblock %}
+{% block body %}
+<h1>Proposition D</h1>
+
+<p class="propSummary">
+    Shall Chapter IV, Section 3 of the Dallas City Charter be amended by deleting the requirement that elections for
+    members of the city council be held in May and instead be held according to state law and as designated by city
+    resolution or
+    ordinance?
+</p>
+
+<p>
+    The proposed changes are as follows
+</p>
+
+<blockquote>
+    <p>CHAPTER IV. ELECTIONS AND REFERENDUMS</p>
+
+    <p>SEC. 3. GENERAL ELECTION.</p>
+
+    <p>
+        No primary election shall be held for the selection of nominees to the city council unless specifically required
+        by state law. General elections for the purpose of electing members of the city council shall be held <span
+            class="da">according to state law</span><span class="dr">on the first authorized election date after March 1
+            of each odd- numbered year</span>. If state law does not restrict election dates, the city council shall by
+        <span class="da">resolution or</span>ordinance establish an election date <span class="da">on a uniform election
+            date</span>in <span class="dr">May of </span>oddnumbered years. The members elected shall compose the city
+        council of the City of Dallas and shall serve for the terms provided in Chapter III of this Charter, or until
+        their respective successors shall have been elected, qualified, and taken office.
+    </p>
+</blockquote>
+
+{% endblock %}

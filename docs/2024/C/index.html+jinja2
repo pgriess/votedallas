@@ -1,0 +1,49 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition C{% endblock %}
+{% block body %}
+<h1>Proposition C</h1>
+
+<p class="propSummary">
+    Shall Chapter III, Section 4(a) of the Dallas City Charter be amended to increase the annual salary for the mayor to
+    $110,000 and the annual salaries for councilmembers to $90,000 with salaries subject to a yearly adjustment equal to
+    the year-over-year percentage increase in the local consumer price index, effective January 1, 2025?
+</p>
+
+<p>
+    A table summarizing the salaries of mayor and city council members Dallas compared to other major regional cities is
+    below. Salaries shown are adjusted to the <a href="https://www.bls.gov/cpi/">local cost of living</a>.
+</p>
+
+<table>
+    <tr>
+        <th>City</th>
+        <th>Mayor salary</th>
+        <th>Council salary</th>
+    </tr>
+    <tr>
+        <td>Dallas (current)</td>
+        <td>$80,000</td>
+        <td>$60,000</td>
+    </tr>
+    <tr>
+        <td>Dallas (Prop. C)</td>
+        <td>$110,000</td>
+        <td>$90,000</td>
+    </tr>
+    <tr>
+        <td>Houston</td>
+        <td>$255,738</td>
+        <td>$72,603</td>
+    </tr>
+    <tr>
+        <td>Phoenix</td>
+        <td>$144,141</td>
+        <td>$111,750</td>
+    </tr>
+</table>
+
+<p>
+    The full text of the proposed changes at <a href="PCL.pdf">City of Dallas, November 5, 2024 Election - Charter
+        Propositions</a>, which includes a copy of Chapter III, Section 4(a) of the Dallas City Charter.
+</p>
+{% endblock %}

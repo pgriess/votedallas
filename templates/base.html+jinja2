@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LEGEFL2H8J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-LEGEFL2H8J');
+    </script>
+
+    <meta charset="utf-8" />
+
+    {# See https://pure-css.github.io/start/#add-the-viewport-meta-element #}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="/css/pure-min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+
+<body>
+    <div class="header">
+        <input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+            <nav id="sidebar-menu">
+                <ul>
+                    {% block sidebarextras %}
+                    {% endblock %}
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+        </label>
+        {# This is all very horrible #}
+        <div
+            style="display: inline-block; width: calc(100% - 15vh); height: 10vh; text-align: center; vertical-align: middle;">
+            Vote Dallas
+        </div>
+    </div>
+    <div class="overlay">
+        {% block body %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

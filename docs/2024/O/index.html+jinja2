@@ -1,0 +1,45 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition O{% endblock %}
+{% block body %}
+<h1>Proposition O</h1>
+
+<p class="propSummary">
+    Shall Chapter VIII, Section 6 of the Dallas City Charter be amended to clarify the terms of associate municipal
+    judges and state that associate municipal judges are appointed by city council, receive assignments from the
+    administrative judge or the administrative judge's designee, and must be residents of Dallas within four months of
+    the date of appointment and practicing attorneys in good standing?
+</p>
+
+<p>
+    The proposed changes to Chapter VIII are as follows
+</p>
+
+<blockquote>
+    <p>CHAPTER VIII. MUNICIPAL COURTS</p>
+
+    <p>SEC. 6. ASSOCIATE MUNICIPAL JUDGES.</p>
+
+    <p>
+        <span class="da">In May of each fourth year, associate municipal judges shall be appointed by city council.
+            Associate municipal judges will receive their assignment from the administrative judge or the administrative
+            judge's designee. Each associate municipal judge shall be a practicing attorney of good standing. Each
+            associate municipal judge must be a resident of the City of Dallas within four months of appointment. Each
+            associate municipal judge shall hold office for a term that is equal to the length of terms for members of
+            the city council, Places 1 through 14, from the date of appointment or until a successor is appointed and
+            qualified, unless sooner removed by the council. In the event of any vacancy in the office of associate
+            municipal judge by death, resignation, or otherwise, the city council may appoint a qualified attorney to
+            fill the unexpired term as an associate municipal judge. The associate municipal judge is considered a
+            part-time judge and is called upon as needed.</span><span class="dr">If, for any cause, any of the municipal
+            judges shall temporarily fail to act, then and in such case the council is hereby authorized to appoint some
+            qualified attorney who shall act in the place and stead of such municipal judge, and who shall have powers
+            and discharge all the duties of said office and shall receive the compensation therefor accruing while so
+            acting. Such temporary judges shall be known as associate municipal judges. Associate municipal judges,
+            during their appointments, shall not represent clients on matters pending in the municipal courts. The
+            appointment of an associate municipal judge shall be by resolution of the city council, filed in the office
+            of the city secretary. In the event of civil emergency, such appointment may be made by the mayor; provided,
+            however, no compensation shall be paid to such judges so appointed unless confirmed by the city
+            council.</span>
+    </p>
+</blockquote>
+
+{% endblock %}

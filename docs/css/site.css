@@ -1,7 +1,83 @@
 body {
     font-size: 2rem;
+    margin: 5vw;
 }
 
 .propSummary {
     font-style: italic;
+}
+
+.da {
+    color: green;
+}
+
+.dr {
+    color: red;
+    text-decoration-line: line-through;
+}
+
+.overlay {
+    z-index: -1;
+    margin-top: 15vh;
+}
+
+.header {
+    background-color: #FF1053;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+#hamburger-input:checked+#hamburger-menu #sidebar-menu {
+    visibility: visible;
+}
+
+#hamburger-input:checked~.overlay {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+#hamburger-menu {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    width: 10vh;
+    height: 10vh;
+    background: linear-gradient(to bottom,
+            #59C3C3, #59C3C3 20%,
+            #FF1053 20%, #FF1053 40%,
+            #59C3C3 40%, #59C3C3 60%,
+            #FF1053 60%, #FF1053 80%,
+            #59C3C3 80%, #59C3C3 100%);
+}
+
+#hamburger-menu #sidebar-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: teal;
+    text-align: center;
+}
+
+#hamburger-menu ul {
+    padding-left: 0;
+}
+
+#hamburger-menu li {
+    list-style: none;
+}
+
+#hamburger-menu a {
+    color: black;
+    text-decoration: none;
 }

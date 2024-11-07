@@ -1,0 +1,7 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Contact{% endblock %}
+{% block body %}
+
+For more information, send mail to <a href="mailto:votedallas2024@gmail.com">votedallas2024@gmail.com</a>.
+
+{% endblock %}

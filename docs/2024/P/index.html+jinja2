@@ -1,0 +1,34 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition P{% endblock %}
+{% block body %}
+<h1>Proposition P</h1>
+
+<p class="propSummary">
+    Shall Chapter XVI, Section 12.1 of the Dallas City Charter be amended by deleting the requirement that a city
+    employee who appeals his or her discharge or reduction in grade to an administrative law judge pay one-half of the
+    costs attributed to having the administrative law judge conduct the appeal hearing?
+</p>
+
+<p>
+    The proposed changes to Chapter XVI are as follows
+</p>
+
+<blockquote>
+    <p>CHAPTER XVI. CIVIL SERVICE AND PERSONNEL</p>
+
+    <p>SEC. 12.1. ADMINISTRATIVE LAW JUDGE.</p>
+
+    <p>
+        <span class="dr">(a)</span>Instead of appealing to a trial board as provided in Section 12 of this chapter, an
+        officer or employee of the city, classified or unclassified, who has been discharged or reduced in grade may
+        appeal to an administrative law judge in accordance with procedures established by ordinance.
+    </p>
+
+    <p>
+        <span class="dr">(b) A person who appeals to an administrative law judge shall pay one-half of the costs
+            attributed to having the administrative law judge conduct the appeal hearing.</span>
+    </p>
+
+</blockquote>
+
+{% endblock %}

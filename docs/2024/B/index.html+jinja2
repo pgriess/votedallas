@@ -1,0 +1,28 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition B{% endblock %}
+{% block body %}
+<h1>Proposition B</h1>
+
+<p class="propSummary">
+    Shall the Dallas City Charter be amended by adding a preamble that declares the city to be an equitable
+    democracy, comprised of representatives that act to make the city fair, equitable, just, and safe for all
+    residents?
+</p>
+
+<p>
+    The proposed preamble is as follows, from <a href="PCL.pdf">City of Dallas, November 5, 2024 Election - Charter
+        Propositions</a>:
+</p>
+
+<blockquote>
+    We, the people of the City of Dallas, under the constitution and laws of the state of Texas, establish this
+    preamble in order to secure the benefits of local self-government and set forth the guiding principles for our
+    city. We affirm the values of our city as an equitable democracy, comprised of representatives that act to make
+    our city fair, equitable, just, and safe for all those who reside within it.
+</blockquote>
+
+<p>
+    The Charter of the City of Dallas is <a
+        href="https://codelibrary.amlegal.com/codes/dallas/latest/dallas_tx/0-0-0-49893">here</a>.
+</p>
+{% endblock %}
