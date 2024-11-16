@@ -25,6 +25,9 @@ build: ${SITE_CSS} ${SITE_HTML} ${SITE_PDF}
 clean:
 	rm -fr ${SITE_DIR}
 
+publish: build
+	aws s3 sync --delete ${SITE_DIR}/ s3://www.votedallas.org/
+
 ${SITE_DIR}/%.css: ${DOCS_DIR}/%.css
 	mkdir -p $(dir $@)
 	cp $< $@
