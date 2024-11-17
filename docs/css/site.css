@@ -29,6 +29,10 @@ body {
     line-height: 0;
 }
 
+.footer {
+    font-size: 1rem;
+}
+
 #hamburger-input {
     display: none;
 }
