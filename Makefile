@@ -27,6 +27,7 @@ clean:
 
 publish: build
 	aws s3 sync --delete ${SITE_DIR}/ s3://www.votedallas.org/
+	aws cloudfront create-invalidation --distribution-id=E2OSCXSVBFL0AQ --paths='/*'
 
 ${SITE_DIR}/%.css: ${DOCS_DIR}/%.css
 	mkdir -p $(dir $@)
