@@ -35,7 +35,6 @@
                 </ul>
             </nav>
         </label>
-        {# This is all very horrible #}
         <div id="title">Vote Dallas</div>
     </div>
     <div class="overlay">

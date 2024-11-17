@@ -96,4 +96,7 @@ body {
     display: inline-block;
     width: calc(100% - 15vh);
     text-align: center;
+    vertical-align: text-top;
+    font-weight: bold;
+    font-size: xx-large;
 }
