@@ -36,10 +36,7 @@
             </nav>
         </label>
         {# This is all very horrible #}
-        <div
-            style="display: inline-block; width: calc(100% - 15vh); height: 10vh; text-align: center; vertical-align: middle;">
-            Vote Dallas
-        </div>
+        <div id="title">Vote Dallas</div>
     </div>
     <div class="overlay">
         {% block body %}

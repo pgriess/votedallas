@@ -18,15 +18,23 @@ body {
 
 .overlay {
     z-index: -1;
-    margin-top: 15vh;
 }
 
 .header {
     background-color: #FF1053;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
+    padding: 1vh;
+    /*
+     * If we just used 100% here, the right portion of the div would overflow
+     * the container by 2vh. Subtract left and right padding.
+     */
+    width: calc(100% - 2vh);
+    /*
+     * Without this, we have an extra bit of vertical space that looks weird,
+     * especially with the hamburger menu; see #22.
+     */
+    line-height: 0;
 }
 
 #hamburger-input {
@@ -67,6 +75,8 @@ body {
     box-sizing: border-box;
     background-color: teal;
     text-align: center;
+    /* Override inherited style from .header */
+    line-height: normal;
 }
 
 #hamburger-menu ul {
@@ -80,4 +90,10 @@ body {
 #hamburger-menu a {
     color: black;
     text-decoration: none;
+}
+
+#title {
+    display: inline-block;
+    width: calc(100% - 15vh);
+    text-align: center;
 }
