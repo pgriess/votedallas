@@ -17,7 +17,7 @@
 </p>
 
 <p>
-    The full text of Ordinance No. 32801 can be found <a href="24-1123.pdf">here</a>, which includes a copy of
-    Section 40A of the Dallas City Code with the proposed changes.
+    The full text of Ordinance No. 32801 can be found <a href="../24-1123.pdf">here</a>, which includes a copy
+    of Section 40A of the Dallas City Code with the proposed changes.
 </p>
 {% endblock %}
