@@ -4,6 +4,8 @@ BIN_DIR=bin
 DEPS_DIR=.deps
 DOCS_DIR=docs
 SITE_DIR=site
+AWS_S3_BUCKET?=www.votedallas.org
+AWS_CF_DISTRIBUTION?=E2OSCXSVBFL0AQ
 
 DOCS_CSS=$(shell find ${DOCS_DIR} -type f -name '*.css')
 SITE_CSS=$(patsubst ${DOCS_DIR}/%.css,${SITE_DIR}/%.css,${DOCS_CSS})
@@ -56,5 +58,5 @@ clean:
 	rm -fr ${DEPS_DIR} ${SITE_DIR}
 
 publish: build
-	aws s3 sync --delete ${SITE_DIR}/ s3://www.votedallas.org/
-	aws cloudfront create-invalidation --distribution-id=E2OSCXSVBFL0AQ --paths='/*'
+	aws s3 sync --delete ${SITE_DIR}/ s3://${AWS_S3_BUCKET}/
+	aws cloudfront create-invalidation --distribution-id=${AWS_CF_DISTRIBUTION} --paths='/*'
