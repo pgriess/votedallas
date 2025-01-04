@@ -17,6 +17,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+
+    {# Facebook OpenGraph #}
+    <meta property="og:title" content="{{ self.title() }}">
+    {% if self.description() %}
+    <meta property="og:description" content="{{ self.description() }}">
+    {% endif %}
+    {% if self.image() %}
+    <meta property="og:image" content="{% block image %}{% endblock %}">
+    {% endif %}
+
+    {# Twitter #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ self.title() }}">
+    {% if self.description() %}
+    <meta name="twitter:description" content="{{ self.description() }}">
+    {% endif %}
+    {% if self.image() %}
+    <meta name="twitter:image" content="{{ self.image() }}">
+    {% endif %}
 
     <link rel="stylesheet" href="/css/pure-min.css" />
     <link rel="stylesheet" href="/css/site.css" />
