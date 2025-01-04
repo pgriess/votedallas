@@ -37,11 +37,7 @@ SITE_PDF=$(patsubst ${DOCS_DIR}/%.pdf,${SITE_DIR}/%.pdf,${DOCS_PDF})
 ${SITE_DIR}/%.html: ${DOCS_DIR}/%.html+jinja2
 	${BIN_DIR}/jinjar --docs_dir=${DOCS_DIR} --gnumake_deps_dir=${DEPS_DIR} --templates_dir=${TEMPLATES_DIR} $< $@
 
-${SITE_DIR}/%.css: ${DOCS_DIR}/%.css
-	mkdir -p $(dir $@)
-	cp $< $@
-
-${SITE_DIR}/%.pdf: ${DOCS_DIR}/%.pdf
+${SITE_DIR}/%: ${DOCS_DIR}/%
 	mkdir -p $(dir $@)
 	cp $< $@
 
