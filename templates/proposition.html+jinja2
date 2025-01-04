@@ -1,5 +1,4 @@
 {% extends "base.html+jinja2" %}
 {% block sidebarextras %}
-{# Use parent.parent here because proposition files named things like 2024/A/index.html+jinja2 #}
-<li><a href="../">{{ source_relative_path.parent.parent.name }}</a></li>
+<li><a href="../">{{ source_relative_path }}</a></li>
 {% endblock %}

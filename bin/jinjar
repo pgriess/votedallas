@@ -6,16 +6,48 @@
 # recommended pattern at
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html.
 
-from argparse import ArgumentParser
+from argparse import Action, ArgumentParser, Namespace
 import logging
 import os
 from pathlib import Path
 import sys
+from typing import Any, cast, Sequence
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from jinja2.meta import find_referenced_templates
 
 log = logging.getLogger(__name__)
+
+
+class ContextBuilderAction(Action):
+    """
+    An Action that turns a collection of <name>=<value> arguments into a
+    dict[str, str].
+    """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def __call__(
+        self,
+        parser: ArgumentParser,
+        namespace: Namespace,
+        values: str | Sequence[Any] | None,
+        option_string: str | None = None,
+    ) -> None:
+        if values is None:
+            raise ValueError
+
+        if not isinstance(values, str):
+            raise ValueError
+
+        ck, cv = values.split("=", 1)
+
+        context = cast(dict[str, str], getattr(namespace, self.dest, {}))
+        context[ck] = cv
+
+        setattr(namespace, self.dest, context)
+
 
 if __name__ == "__main__":
     ap = ArgumentParser()
@@ -32,6 +64,16 @@ if __name__ == "__main__":
         type=Path,
         required=True,
         help="directory from which to load templates",
+    )
+    ap.add_argument(
+        "--template_context",
+        "-t",
+        default={},
+        action=ContextBuilderAction,
+        help=(
+            "a string in the form <name>=<value> to be added to the template "
+            "render context; may be used multiple times"
+        ),
     )
     ap.add_argument(
         "--gnumake_deps_file",
@@ -121,10 +163,4 @@ if __name__ == "__main__":
 
     args.destination.parent.mkdir(parents=True, exist_ok=True)
     with open(args.destination, "wt", encoding="utf-8") as df:
-        df.write(
-            source_template.render(
-                {
-                    "source_relative_path": args.source.relative_to(args.docs_dir),
-                }
-            )
-        )
+        df.write(source_template.render(args.template_context))

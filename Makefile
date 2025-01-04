@@ -40,6 +40,7 @@ ${SITE_DIR}/%.html: ${DOCS_DIR}/%.html+jinja2
 		--docs_dir=${DOCS_DIR} \
 		--templates_dir=${TEMPLATES_DIR} \
 		--gnumake_deps_file=$(patsubst ${DOCS_DIR}/%.html+jinja2,${DEPS_DIR}/%.html+jinja2,$<) \
+		-t source_relative_path=$(shell basename $(shell dirname $(shell dirname $(patsubst ${DOCS_DIR}/%.html+jinja2,%.html+jinja2,$<)))) \
 		$< $@
 
 ${SITE_DIR}/%: ${DOCS_DIR}/%
