@@ -1,19 +1,42 @@
 #!/usr/bin/env python
 #
 # Render a Jinja2 template.
+#
+# Supports machinery for GNU Make dependency tracking by following the
+# recommended pattern at
+# https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html.
 
 from argparse import ArgumentParser
+import logging
+import os
 from pathlib import Path
+import sys
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2.meta import find_referenced_templates
+
+log = logging.getLogger(__name__)
 
 if __name__ == "__main__":
     ap = ArgumentParser()
+    ap.add_argument(
+        "--verbose",
+        "-v",
+        dest="verbosity",
+        action="count",
+        default=0,
+        help="increase logging verbosity",
+    )
     ap.add_argument(
         "--templates_dir",
         type=Path,
         required=True,
         help="directory from which to load templates",
+    )
+    ap.add_argument(
+        "--gnumake_deps_dir",
+        type=Path,
+        help="file to which to write GNU Make dependencies metadata",
     )
     ap.add_argument(
         "--docs_dir",
@@ -31,6 +54,7 @@ if __name__ == "__main__":
     )
 
     args = ap.parse_args()
+    logging.basicConfig(level=logging.ERROR - 10 * args.verbosity, stream=sys.stderr)
 
     env = Environment(
         loader=FileSystemLoader(args.templates_dir),
@@ -40,6 +64,67 @@ if __name__ == "__main__":
     with open(args.source, "rt", encoding="utf-8") as sf:
         source_template = env.from_string(sf.read())
 
+    if args.gnumake_deps_dir is not None:
+        # Dependencies for each template
+        template_path_dependencies: dict[Path, list[Path]] = {}
+        # Templates to be processed
+        template_paths: list[Path] = [args.source]
+
+        while template_paths:
+            template_path = template_paths.pop()
+
+            # We've already processed this
+            if template_path in template_path_dependencies:
+                continue
+
+            with open(template_path, mode="rt", encoding="utf-8") as tf:
+                template_ast = env.parse(tf.read())
+
+            template_path_dependencies[template_path] = []
+            for template_dep_name in find_referenced_templates(template_ast):
+                # This can happen with dynamic inheritance / inclusion. Not
+                # something that we use but handle it anyway so typechecking is
+                # clean.
+                if template_dep_name is None:
+                    continue
+
+                template_dep = env.get_template(template_dep_name)
+
+                # Not sure why this can happen, but typecheck clean
+                if template_dep.filename is None:
+                    continue
+
+                template_dep_path = Path(template_dep.filename)
+
+                log.debug(
+                    f"found referenced template {template_dep_name} => {template_dep_path}"
+                )
+
+                template_path_dependencies[template_path].append(template_dep_path)
+
+                # Add this discovered dependency for further processing so that
+                # we have transitive dependencies computed
+                template_paths.append(template_dep_path)
+
+        # Flatten our list of dependencies since we don't really care about
+        # intermediates; we just want the top-level
+        source_dependencies: set[Path] = set()
+        for deps in template_path_dependencies.values():
+            source_dependencies |= set(deps)
+
+        # We store dependencies in a file named the same as the source file, but
+        # with the docs directory replaced with the dependencies directory
+        deps_path = args.gnumake_deps_dir / args.source.relative_to(args.docs_dir)
+
+        # See https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html
+        deps_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(deps_path, mode="wt", encoding="utf-8") as depf:
+            print(
+                f"{args.destination} {deps_path}: {' '.join(os.fspath(p) for p in sorted(source_dependencies))}",
+                file=depf,
+            )
+
+    args.destination.parent.mkdir(parents=True, exist_ok=True)
     with open(args.destination, "wt", encoding="utf-8") as df:
         df.write(
             source_template.render(
