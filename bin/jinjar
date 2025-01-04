@@ -34,7 +34,7 @@ if __name__ == "__main__":
         help="directory from which to load templates",
     )
     ap.add_argument(
-        "--gnumake_deps_dir",
+        "--gnumake_deps_file",
         type=Path,
         help="file to which to write GNU Make dependencies metadata",
     )
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     with open(args.source, "rt", encoding="utf-8") as sf:
         source_template = env.from_string(sf.read())
 
-    if args.gnumake_deps_dir is not None:
+    if args.gnumake_deps_file is not None:
         # Dependencies for each template
         template_path_dependencies: dict[Path, list[Path]] = {}
         # Templates to be processed
@@ -112,15 +112,10 @@ if __name__ == "__main__":
         for deps in template_path_dependencies.values():
             source_dependencies |= set(deps)
 
-        # We store dependencies in a file named the same as the source file, but
-        # with the docs directory replaced with the dependencies directory
-        deps_path = args.gnumake_deps_dir / args.source.relative_to(args.docs_dir)
-
         # See https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html
-        deps_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(deps_path, mode="wt", encoding="utf-8") as depf:
+        with open(args.gnumake_deps_file, mode="wt", encoding="utf-8") as depf:
             print(
-                f"{args.destination} {deps_path}: {' '.join(os.fspath(p) for p in sorted(source_dependencies))}",
+                f"{args.destination} {args.gnumake_deps_file}: {' '.join(os.fspath(p) for p in sorted(source_dependencies))}",
                 file=depf,
             )
 

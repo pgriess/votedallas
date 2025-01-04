@@ -35,7 +35,12 @@ SITE_PDF=$(patsubst ${DOCS_DIR}/%.pdf,${SITE_DIR}/%.pdf,${DOCS_PDF})
 #
 # See https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html.
 ${SITE_DIR}/%.html: ${DOCS_DIR}/%.html+jinja2
-	${BIN_DIR}/jinjar --docs_dir=${DOCS_DIR} --gnumake_deps_dir=${DEPS_DIR} --templates_dir=${TEMPLATES_DIR} $< $@
+	mkdir -p $(dir $(patsubst ${DOCS_DIR}/%.html+jinja2,${DEPS_DIR}/%.html+jinja2,$<))
+	${BIN_DIR}/jinjar \
+		--docs_dir=${DOCS_DIR} \
+		--templates_dir=${TEMPLATES_DIR} \
+		--gnumake_deps_file=$(patsubst ${DOCS_DIR}/%.html+jinja2,${DEPS_DIR}/%.html+jinja2,$<) \
+		$< $@
 
 ${SITE_DIR}/%: ${DOCS_DIR}/%
 	mkdir -p $(dir $@)
