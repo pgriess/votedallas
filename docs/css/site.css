@@ -1,6 +1,22 @@
+:root {
+    /* Colors from https://coolors.co/19535f-0b7a75-d7c9aa-7b2d26-f0f3f5 */
+    --color-1: #19535F;
+    --color-2: #0B7A75;
+    --color-3: #D7C9AA;
+    --color-4: #7B2D26;
+    --color-5: #F0F3F5;
+
+    /* Semantic color names; try to use these below */
+    --color-text: black;
+    --color-text-inverse: var(--color-5);
+    --color-background: var(--color-5);
+}
+
 body {
     font-size: 2rem;
     margin: 5vw;
+    color: var(--color-text);
+    background-color: var(--color-background);
 }
 
 .propSummary {
@@ -17,7 +33,8 @@ body {
 }
 
 .header {
-    background-color: #FF1053;
+    color: var(--color-text-inverse);
+    background-color: var(--color-1);
     position: sticky;
     top: 0;
     padding: 1vh;
@@ -54,11 +71,11 @@ body {
     width: 10vh;
     height: 10vh;
     background: linear-gradient(to bottom,
-            #59C3C3, #59C3C3 20%,
-            #FF1053 20%, #FF1053 40%,
-            #59C3C3 40%, #59C3C3 60%,
-            #FF1053 60%, #FF1053 80%,
-            #59C3C3 80%, #59C3C3 100%);
+            var(--color-3), var(--color-3) 20%,
+            var(--color-1) 20%, var(--color-1) 40%,
+            var(--color-3) 40%, var(--color-3) 60%,
+            var(--color-1) 60%, var(--color-1) 80%,
+            var(--color-3) 80%, var(--color-3) 100%);
 }
 
 #hamburger-menu #sidebar-menu {
@@ -69,7 +86,8 @@ body {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    background-color: teal;
+    background-color: var(--color-1);
+    color: var(--color-text-inverse);
     text-align: center;
     /* Override inherited style from .header */
     line-height: normal;
@@ -84,7 +102,7 @@ body {
 }
 
 #hamburger-menu a {
-    color: black;
+    color: var(--color-text-inverse);
     text-decoration: none;
 }
 
