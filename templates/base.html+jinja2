@@ -11,6 +11,16 @@
         gtag('config', 'G-LEGEFL2H8J');
     </script>
 
+    <script type="text/javascript">
+        // Dismiss the hamburger menu if we get an escape key as an aide to
+        // desktop users
+        document.onkeydown = function (e) {
+            if (e.key === "Escape") {
+                document.querySelector("#hamburger-input").checked = false;
+            }
+        }
+    </script>
+
     <meta charset="utf-8" />
 
     {# See https://pure-css.github.io/start/#add-the-viewport-meta-element #}
