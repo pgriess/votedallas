@@ -16,7 +16,7 @@ SITE_HTML=$(patsubst ${DOCS_DIR}/%.html+jinja2,${SITE_DIR}/%.html,${DOCS_HTML})
 DOCS_PDF=$(shell find ${DOCS_DIR} -type f -name '*.pdf')
 SITE_PDF=$(patsubst ${DOCS_DIR}/%.pdf,${SITE_DIR}/%.pdf,${DOCS_PDF})
 
-.PHONY: build clean serve
+.PHONY: build clean serve publish
 .DEFAULT_GOAL := serve
 
 # Source all dependency definitions
