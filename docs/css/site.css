@@ -10,6 +10,9 @@
     --color-text: black;
     --color-text-inverse: var(--color-5);
     --color-background: var(--color-5);
+
+    /* Semantic geometry */
+    --height-header: 10vh;
 }
 
 body {
@@ -37,7 +40,11 @@ body {
     background-color: var(--color-1);
     position: sticky;
     top: 0;
-    padding: 1vh;
+    /*
+     * The hamburger menu is 5 stripes of 20% height; this keeps the padding the
+     * uniform with the stripe height.
+     */
+    padding: calc(var(--height-header) * 0.2);
     width: stretch;
     /*
      * Without this, we have an extra bit of vertical space that looks weird,
@@ -68,8 +75,8 @@ body {
     padding: 0px;
     margin: 0px;
     display: inline-block;
-    width: 10vh;
-    height: 10vh;
+    width: var(--height-header);
+    height: var(--height-header);
     background: linear-gradient(to bottom,
             var(--color-3), var(--color-3) 20%,
             var(--color-1) 20%, var(--color-1) 40%,
