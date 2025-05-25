@@ -28,3 +28,11 @@ Deploy the website
 ```console
 $ make deploy
 ```
+
+## Beta site
+
+Publish to [beta.votedallas.org](https://beta.votedallas.org/) as follows:
+
+```bash
+make publish AWS_S3_BUCKET=beta.votedallas.org AWS_CF_DISTRIBUTION=E1872JDMLLUW5Q
+```
