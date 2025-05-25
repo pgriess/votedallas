@@ -23,7 +23,7 @@
 
     <meta charset="utf-8" />
 
-    {# See https://pure-css.github.io/start/#add-the-viewport-meta-element #}
+    {# See https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Viewport_meta_element #}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{% block title %}{% endblock %}</title>
