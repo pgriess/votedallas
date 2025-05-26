@@ -15,9 +15,34 @@
     --height-header: 10vh;
 }
 
+@media only screen and (width < 800px) {
+    :root {
+        font-size: large;
+    }
+
+    body {
+        margin: 5vw;
+    }
+
+    #title {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (width >=800px) {
+    body {
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
+
+    #title {
+        font-size: 3rem;
+    }
+}
+
 body {
-    font-size: 2rem;
-    margin: 5vw;
     color: var(--color-text);
     background-color: var(--color-background);
 }
@@ -54,7 +79,7 @@ body {
 }
 
 .footer {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 #hamburger-input {
@@ -83,6 +108,8 @@ body {
             var(--color-3) 40%, var(--color-3) 60%,
             var(--color-1) 60%, var(--color-1) 80%,
             var(--color-3) 80%, var(--color-3) 100%);
+    /* The menu takes up the whole screen; make its text nice and big no matter what */
+    font-size: xx-large;
 }
 
 #hamburger-menu #sidebar-menu {
@@ -123,5 +150,4 @@ body {
     width: calc(100% - var(--height-header) * 1.6);
     text-align: center;
     font-weight: bold;
-    font-size: xx-large;
 }
