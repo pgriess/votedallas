@@ -1,0 +1,11 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition 4{% endblock %}
+{% block body %}
+<h1>Proposition 4</h1>
+
+<p class="propSummary">
+    The constitutional amendment to dedicate a portion of the revenue derived from
+    state sales and use taxes to the Texas water fund and to provide for the
+    allocation and use of that revenue.
+</p>
+{% endblock %}

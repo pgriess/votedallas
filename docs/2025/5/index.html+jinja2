@@ -1,0 +1,11 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition 5{% endblock %}
+{% block body %}
+<h1>Proposition 5</h1>
+
+<p class="propSummary">
+    The constitutional amendment authorizing the legislature to exempt from ad
+    valorem taxation tangible personal property consisting of animal feed held
+    by the owner of the property for sale at retail.
+</p>
+{% endblock %}

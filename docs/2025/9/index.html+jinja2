@@ -1,0 +1,11 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition 9{% endblock %}
+{% block body %}
+<h1>Proposition 9</h1>
+
+<p class="propSummary">
+    The constitutional amendment to authorize the legislature to exempt from ad
+    valorem taxation a portion of the market value of tangible personal property
+    a person owns that is held or used for the production of income.
+</p>
+{% endblock %}

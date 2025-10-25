@@ -1,0 +1,27 @@
+{% extends "base.html+jinja2" %}
+{% block title %}November 4, 2025{% endblock %}
+{% block body %}
+<h1>November 4, 2025</h1>
+
+<p>
+<ul>
+    <li><a href="1/">Proposition 1</a></li>
+    <li><a href="2/">Proposition 2</a></li>
+    <li><a href="3/">Proposition 3</a></li>
+    <li><a href="4/">Proposition 4</a></li>
+    <li><a href="5/">Proposition 5</a></li>
+    <li><a href="6/">Proposition 6</a></li>
+    <li><a href="7/">Proposition 7</a></li>
+    <li><a href="8/">Proposition 8</a></li>
+    <li><a href="9/">Proposition 9</a></li>
+    <li><a href="10/">Proposition 10</a></li>
+    <li><a href="11/">Proposition 11</a></li>
+    <li><a href="12/">Proposition 12</a></li>
+    <li><a href="13/">Proposition 13</a></li>
+    <li><a href="14/">Proposition 14</a></li>
+    <li><a href="15/">Proposition 15</a></li>
+    <li><a href="16/">Proposition 16</a></li>
+    <li><a href="17/">Proposition 17</a></li>
+</ul>
+</p>
+{% endblock %}

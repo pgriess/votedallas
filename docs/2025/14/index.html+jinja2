@@ -1,0 +1,14 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition 14{% endblock %}
+{% block body %}
+<h1>Proposition 14</h1>
+
+<p class="propSummary">
+    The constitutional amendment providing for the establishment of the Dementia
+    Prevention and Research Institute of Texas, establishing the Dementia
+    Prevention and Research Fund to provide money for research on and prevention
+    and treatment of dementia, Alzheimer's disease, Parkinson's disease, and
+    related disorders in this state, and transferring to that fund $3 billion
+    from state general revenue.
+</p>
+{% endblock %}

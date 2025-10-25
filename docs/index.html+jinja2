@@ -4,6 +4,9 @@
 Vote Dallas provides factual, non-partisan information about ballot propositions.
 
 <p>
-    <a href="2024/">November 5, 2024</a>
+<ul>
+    <li><a href="2025/">November 4, 2025</a></li>
+    <li><a href="2024/">November 5, 2024</a></li>
+</ul>
 </p>
 {% endblock %}

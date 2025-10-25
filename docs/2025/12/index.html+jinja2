@@ -1,0 +1,13 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition 12{% endblock %}
+{% block body %}
+<h1>Proposition 12</h1>
+
+<p class="propSummary">
+    The constitutional amendment regarding the membership of the State
+    Commission on Judicial Conduct, the membership of the tribunal to review the
+    commission's recommendations, and the authority of the commission, the
+    tribunal, and the Texas Supreme Court to more effectively sanction judges
+    and justices for judicial misconduct.
+</p>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition 17{% endblock %}
+{% block body %}
+<h1>Proposition 17</h1>
+
+<p class="propSummary">
+    The constitutional amendment to authorize the legislature to provide for an
+    exemption from ad valorem taxation of the amount of the market value of real
+    property located in a county that borders the United Mexican States that
+    arises from the installation or construction on the property of border
+    security infrastructure and related improvements.
+</p>
+{% endblock %}

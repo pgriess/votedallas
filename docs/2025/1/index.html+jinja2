@@ -1,0 +1,12 @@
+{% extends "proposition.html+jinja2" %}
+{% block title %}Proposition 1{% endblock %}
+{% block body %}
+<h1>Proposition 1</h1>
+
+<p class="propSummary">
+    The constitutional amendment providing for the creation of the permanent
+    technical institution infrastructure fund and the available workforce
+    education fund to support the capital needs of educational programs offered
+    by the Texas State Technical College System.
+</p>
+{% endblock %}
