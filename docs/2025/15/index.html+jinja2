@@ -6,4 +6,20 @@
 <p class="propSummary">
     The constitutional amendment affirming that parents are the primary decision makers for their children.
 </p>
+
+<p>
+    The <a href="../2025-explanatory-statements.pdf">2025 Explanatory
+        Statements for the November 4, 2025 Constitutional Amendment Election</a>
+    document from the Texas Secretary of State website includes the following
+    information:
+
+<blockquote>
+    SJR 34 [Proposition 15] proposes a constitutional amendment to affirm that a
+    parent has the responsibility to nurture and protect the parent's child and
+    the corresponding fundamental right to exercise care, custody, and control
+    of the parent's child, including the right to make decisions concerning the
+    child's upbringing.
+</blockquote>
+
+</p>
 {% endblock %}

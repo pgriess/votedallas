@@ -6,4 +6,17 @@
 <p class="propSummary">
     The constitutional amendment clarifying that a voter must be a United States citizen.
 </p>
+
+<p>
+    The <a href="../2025-explanatory-statements.pdf">2025 Explanatory
+        Statements for the November 4, 2025 Constitutional Amendment Election</a>
+    document from the Texas Secretary of State website includes the following
+    information:
+
+<blockquote>
+    SJR 37 [Proposition 16] proposes a constitutional amendment to provide that
+    only United States citizens are allowed to vote in Texas elections.
+</blockquote>
+
+</p>
 {% endblock %}
