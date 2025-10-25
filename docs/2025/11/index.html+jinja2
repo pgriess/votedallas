@@ -1,7 +1,7 @@
 {% extends "proposition.html+jinja2" %}
-{% block title %}Proposition 11{% endblock %}
+{% block title %}State of Texas Proposition 11{% endblock %}
 {% block body %}
-<h1>Proposition 11</h1>
+<h1>State of Texas Proposition 11</h1>
 
 <p class="propSummary">
     The constitutional amendment authorizing the legislature to increase the

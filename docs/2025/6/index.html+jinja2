@@ -1,7 +1,7 @@
 {% extends "proposition.html+jinja2" %}
-{% block title %}Proposition 6{% endblock %}
+{% block title %}State of Texas Proposition 6{% endblock %}
 {% block body %}
-<h1>Proposition 6</h1>
+<h1>State of Texas Proposition 6</h1>
 
 <p class="propSummary">
     The constitutional amendment prohibiting the legislature from enacting a law

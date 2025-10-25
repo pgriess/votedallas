@@ -1,7 +1,7 @@
 {% extends "proposition.html+jinja2" %}
-{% block title %}Proposition 7{% endblock %}
+{% block title %}State of Texas Proposition 7{% endblock %}
 {% block body %}
-<h1>Proposition 7</h1>
+<h1>State of Texas Proposition 7</h1>
 
 <p class="propSummary">
     The constitutional amendment authorizing the legislature to provide for an

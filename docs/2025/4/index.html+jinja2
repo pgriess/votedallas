@@ -1,7 +1,7 @@
 {% extends "proposition.html+jinja2" %}
-{% block title %}Proposition 4{% endblock %}
+{% block title %}State of Texas Proposition 4{% endblock %}
 {% block body %}
-<h1>Proposition 4</h1>
+<h1>State of Texas Proposition 4</h1>
 
 <p class="propSummary">
     The constitutional amendment to dedicate a portion of the revenue derived from

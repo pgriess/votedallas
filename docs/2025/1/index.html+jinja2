@@ -1,7 +1,7 @@
 {% extends "proposition.html+jinja2" %}
-{% block title %}Proposition 1{% endblock %}
+{% block title %}State of Texas Proposition 1{% endblock %}
 {% block body %}
-<h1>Proposition 1</h1>
+<h1>State of Texas Proposition 1</h1>
 
 <p class="propSummary">
     The constitutional amendment providing for the creation of the permanent

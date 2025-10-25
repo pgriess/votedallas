@@ -1,7 +1,7 @@
 {% extends "proposition.html+jinja2" %}
-{% block title %}Proposition 15{% endblock %}
+{% block title %}State of Texas Proposition 15{% endblock %}
 {% block body %}
-<h1>Proposition 15</h1>
+<h1>State of Texas Proposition 15</h1>
 
 <p class="propSummary">
     The constitutional amendment affirming that parents are the primary decision makers for their children.

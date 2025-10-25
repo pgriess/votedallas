@@ -1,7 +1,7 @@
 {% extends "proposition.html+jinja2" %}
-{% block title %}Proposition 17{% endblock %}
+{% block title %}State of Texas Proposition 17{% endblock %}
 {% block body %}
-<h1>Proposition 17</h1>
+<h1>State of Texas Proposition 17</h1>
 
 <p class="propSummary">
     The constitutional amendment to authorize the legislature to provide for an
