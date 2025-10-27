@@ -1,3 +1,6 @@
+# ImageMagick uses Inkscape to render SVG files
+PATH+=:/Applications/Inkscape.app/Contents/MacOS
+
 SERVE_PORT?=8000
 TEMPLATES_DIR=templates
 BIN_DIR=bin
@@ -9,6 +12,9 @@ AWS_CF_DISTRIBUTION?=E2OSCXSVBFL0AQ
 
 DOCS_CSS=$(shell find ${DOCS_DIR} -type f -name '*.css')
 SITE_CSS=$(patsubst ${DOCS_DIR}/%.css,${SITE_DIR}/%.css,${DOCS_CSS})
+
+DOCS_IMAGE=$(shell find ${DOCS_DIR} -type f -name '*.svg')
+SITE_IMAGE=$(patsubst ${DOCS_DIR}/%.svg,${SITE_DIR}/%.png,${DOCS_IMAGE})
 
 DOCS_HTML=$(shell find ${DOCS_DIR} -type f -name '*.html+jinja2')
 SITE_HTML=$(patsubst ${DOCS_DIR}/%.html+jinja2,${SITE_DIR}/%.html,${DOCS_HTML})
@@ -45,6 +51,10 @@ ${SITE_DIR}/%.html: ${DOCS_DIR}/%.html+jinja2
 		-t source_relative_path=$(shell basename $(shell dirname $(shell dirname $(patsubst ${DOCS_DIR}/%.html+jinja2,%.html+jinja2,$<)))) \
 		$< $@
 
+${SITE_DIR}/%.png: ${DOCS_DIR}/%.svg
+	mkdir -p $(dir $@)
+	magick convert $< $@
+
 ${SITE_DIR}/%: ${DOCS_DIR}/%
 	mkdir -p $(dir $@)
 	cp $< $@
@@ -52,7 +62,7 @@ ${SITE_DIR}/%: ${DOCS_DIR}/%
 serve: build
 	python -m http.server --directory ${SITE_DIR} -b 127.0.0.1 ${SERVE_PORT}
 
-build: ${SITE_CSS} ${SITE_HTML} ${SITE_PDF}
+build: ${SITE_CSS} ${SITE_IMAGE} ${SITE_HTML} ${SITE_PDF}
 
 clean:
 	rm -fr ${DEPS_DIR} ${SITE_DIR}
