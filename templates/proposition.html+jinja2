@@ -1,4 +1,4 @@
 {% extends "base.html+jinja2" %}
 {% block sidebarextras %}
-<li><a href="../">{{ source_relative_path }}</a></li>
+<li><a href="../">{{ parent_dir_name }}</a></li>
 {% endblock %}

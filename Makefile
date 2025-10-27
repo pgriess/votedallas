@@ -9,6 +9,14 @@ DOCS_DIR=docs
 SITE_DIR=site
 AWS_S3_BUCKET?=www.votedallas.org
 AWS_CF_DISTRIBUTION?=E2OSCXSVBFL0AQ
+# TODO: Using AWS_S3_BUCKET for the hostname happens to work, but it's
+# 		fragile. More than that, we don't get a cache-busting hint when this
+# 		changes (e.g. when flipping to beta) so assets don't get re-built and
+#		we can end up publishing the wrong thing as a result.
+#
+# TODO: Also it's weird that we're emitting templates rendered for a specific host
+#		when we're running on localhost. It should be localhost!
+SERVE_HOSTNAME?=${AWS_S3_BUCKET}
 
 DOCS_CSS=$(shell find ${DOCS_DIR} -type f -name '*.css')
 SITE_CSS=$(patsubst ${DOCS_DIR}/%.css,${SITE_DIR}/%.css,${DOCS_CSS})
@@ -48,7 +56,9 @@ ${SITE_DIR}/%.html: ${DOCS_DIR}/%.html+jinja2
 		--docs_dir=${DOCS_DIR} \
 		--templates_dir=${TEMPLATES_DIR} \
 		--gnumake_deps_file=$(patsubst ${DOCS_DIR}/%.html+jinja2,${DEPS_DIR}/%.html+jinja2,$<) \
-		-t source_relative_path=$(shell basename $(shell dirname $(shell dirname $(patsubst ${DOCS_DIR}/%.html+jinja2,%.html+jinja2,$<)))) \
+		-t parent_dir_name=$(shell basename $(shell dirname $(shell dirname $(patsubst ${DOCS_DIR}/%.html+jinja2,%.html+jinja2,$<)))) \
+		-t host_relative_path=$(shell dirname $(patsubst ${DOCS_DIR}/%.html+jinja2,%.html+jinja2,$<)) \
+		-t hostname=${AWS_S3_BUCKET} \
 		$< $@
 
 ${SITE_DIR}/%.png: ${DOCS_DIR}/%.svg
